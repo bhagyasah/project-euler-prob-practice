@@ -1,0 +1,16 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "description": "solution of projectEuler problems...in js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bhagya Sah",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.2"
+  }
+}

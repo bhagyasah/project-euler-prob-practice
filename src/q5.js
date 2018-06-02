@@ -11,9 +11,9 @@ while(true){
 			console.log(i);
 		}
 	}
-	i += 1;
 	if(valueFound){
 		break;
 	}
+	i += 1;
 }
-console.log(valueFound,i-1);
+console.log(valueFound,i);

@@ -21,7 +21,7 @@ let givenGrid=`08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 							01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48`,
 	maxProduct= 0,product,arrayNo,arrayindex;
 
-const gridArray = givenGrid.split("\n").map(str => {
+	const gridArray = givenGrid.split("\n").map(str => {
 	const	lastIndex = str.lastIndexOf("\t");
 	return str.slice(lastIndex+1).split(" ").map(c => parseInt(c));
 });
@@ -66,7 +66,6 @@ for(let x=0; x<20; x++){
 				arrayindex = y;
 			}
 		}
-
 	}
 }
 console.log(maxProduct,'array No=',arrayNo, 'array index=',arrayindex);

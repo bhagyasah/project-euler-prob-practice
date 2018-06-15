@@ -9,7 +9,6 @@ function coltazCount(num){
 			num = (3 * num)+1;
 		}
 		count += 1;
-	//	console.log(num);
 	}
 	return count;
 }

@@ -1,22 +1,18 @@
-function collatz_count_until_1(n) {
-  var count = 0;
-  while(n !== 1) {
-    if(n % 2 === 0) {
-      n /= 2;
-    } else {
-      n = (3 * n) + 1;
-    }
-    count++;
-  }
-  return count;
-}
+// solving by applying combination......
+var possiblePaths = () => {
+	var path = Math.floor(fact(40) / (fact(20) * fact(20)));
+	return path;
+};
 
-var max;
-for(var i = 1; i < 1000000; i++) {
-  var l = collatz_count_until_1(i);
-  if(max === undefined || max[0] < l) {
-    max = [l, i]
-  }
-}
+var fact = (n) => {
+	var factorail=1;
+	for(let i=n; i !=1; i--){
+		factorail *= i;
+	}
+	return factorail;
+};
+console.log(possiblePaths());
 
-console.log("Maximum stopping distance %d, starting number %d", max[0], max[1]);
+
+
+

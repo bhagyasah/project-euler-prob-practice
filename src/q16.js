@@ -35,14 +35,6 @@ console.log('result is ',sum);
 
 
 
-
-
-
-
-
-
-
-
 //simple method if digit is small.....................
 // var powerNum=Math.pow(2,1000);
 // console.log(powerNum);

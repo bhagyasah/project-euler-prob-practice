@@ -25,7 +25,7 @@ function largestProductInGrid()	{
 
 	const gridArray = givenGrid.split("\n").map(str => str.split(" ")).map(arr => arr.map(c => parseInt(c, 10)));
 
-	for	(let x	=	0; x	<	20; x +=	1)	{
+	for (let x = 0; x	<	20; x += 1)	{
 		for	(let y	=	0; y	<	20; y	+=	1)	{
 		//	calculating right max product of 4 consecutive no...
 			if	(y	<	17)	{

@@ -1,19 +1,21 @@
-let valueFound=false;
-let i=20;
-while(true){
-	for(let j = 1; j <= 20; j++){
-		if(i % j === 0){
-
-			valueFound = true;
-		}else{
-			valueFound=false;
-			break;
-			console.log(i);
+function smallestMultiple(n)	{
+	let valueFound	=	false;
+	let i	=	n;
+	while	(true)	{
+		for	(let j = 1; j <= 20; j +=	1)	{
+			if	(i % j === 0)	{
+				valueFound = true;
+			}	else	{
+				valueFound	=	false;
+				break;
+			}
 		}
+		if	(valueFound)	{
+			break;
+		}
+		i += 1;
 	}
-	if(valueFound){
-		break;
-	}
-	i += 1;
+	return i;
 }
-console.log(valueFound,i);
+
+console.log(smallestMultiple(20));

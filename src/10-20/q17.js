@@ -1,116 +1,72 @@
 
-var oneDigit= (n) =>{
-
-	switch(n){
-	case 1:
-		return "one";
-	case 2:
-		return "two";
-	case 3:
-		return "three";
-	case 4:
-		return "four";
-	case 5:
-		return "five";
-	case 6:
-		return "six";
-	case 7:
-		return "seven";
-	case 8:
-		return "eight";
-	case 9:
-		return "nine";
-	case 10:
-		return "ten";
-	case 11:
-		return "eleven";
-	case 12:
-		return "twelve";
-	case 13:
-		return "thirteen";
-	case 14:
-		return "fourteen";
-	case 15:
-		return "fifteen";
-	case 16:
-		return "sixteen";
-	case 17:
-		return "seventeen";
-	case 18:
-		return "eighteen";
-	case 19:
-		return "nineteen";
-	}
+const oneDigit	= (n) =>	{
+	const oneDigitArray =	["",	"one", "two", "three", "four", "five", "six",	"seven", "eight", "nine",	"ten",
+		"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+	return oneDigitArray[n];
 };
 
-var twoDigit= (n) => {
-	switch(n){
-	case 2:
-		return "twenty";
-	case 3:
-		return "thirty";
-	case 4:
-		return "forty";
-	case 5:
-		return "fifty";
-	case 6:
-		return "sixty";
-	case 7:
-		return "seventy";
-	case 8:
-		return "eighty";
-	case 9:
-		return "ninety";
-	}
+const twoDigit	= (n) => {
+	const twoDigitArray = ["",	"",	"twenty",	"thirty",	"forty", "fifty",	"sixty", "seventy",	"eighty", "ninety"];
+	return twoDigitArray[n];
 };
 
-var numWord = (i) => {
-	let ones,tens,onesWord,tensWord;
-	if(i <=19){
+function numWord(i)	{
+	let ones;
+	let tens;
+	let onesWord;
+	let tensWord;
+	let result;
+
+	if	(i <=	19)	{
 		return oneDigit(i);
 	}
-	if(i>19 && i<=99){
-		ones= i % 10;
-		if(ones !=0){
-			onesWord= oneDigit(ones);
-		}else{
-			onesWord="";
+	if	(i	>	19 && i	<=	99)	{
+		ones	= i % 10;
+		if	(ones !==	0)	{
+			onesWord	= oneDigit(ones);
+		}	else	{
+			onesWord	=	"";
 		}
-		tens= Math.floor(i / 10);
-		if(i % 10 !=0){
+		tens	= Math.floor(i / 10);
+		if	(i % 10 !==	0)	{
 			tensWord = twoDigit(tens);
-			return `${tensWord}${onesWord}`;
-		}else{
-			tensWord=twoDigit(tens);
-			return tensWord;
+			result	= `${tensWord}${onesWord}`;
+		}	else	{
+			tensWord	=	twoDigit(tens);
+			result	= tensWord;
 		}
 	}
-};
+	return result;
+}
 
-var arrayOfWord = (n) => {
-	let wordArray=[],hundred,hundredWord,remainder,tensWord;
-	for(let i=1; i<=n; i++){
-		if(i <= 99){
+const arrayOfWord = (n) => {
+	const wordArray	=	[];
+	let hundred;
+	let hundredWord;
+	let remainder;
+	let tensWord;
+	for	(let i	=	1; i	<=	n; i	+=	1)	{
+		if	(i <= 99)	{
 			wordArray.push(numWord(i));
 			console.log(numWord(i));
 		}
-		if(i >99 && i<1000){
-			hundred= Math.floor(i / 100);
-			if(i % 100 == 0){
-				hundredWord= oneDigit(hundred);
+		if	(i >	99 && i	<	1000)	{
+			hundred	= Math.floor(i / 100);
+			if	(i % 100 === 0)	{
+				hundredWord	= oneDigit(hundred);
 				hundredWord += "hundred";
 				console.log(hundredWord);
 				wordArray.push(hundredWord);
-			}else{
-				hundredWord= oneDigit(hundred);
+			}	else	{
+				hundredWord	= oneDigit(hundred);
 				hundredWord += "hundredand";
 				remainder = i %100;
-				tensWord= numWord(remainder);
+				tensWord	= numWord(remainder);
 				console.log(`${hundredWord}${tensWord}`);
 				wordArray.push(`${hundredWord}${tensWord}`);
 			}
 		}
-		if(i ==1000){
+		if	(i ===	1000)	{
 			console.log("onethousand");
 			wordArray.push("onethousand");
 		}
@@ -118,10 +74,10 @@ var arrayOfWord = (n) => {
 	return wordArray;
 };
 
-var allString="";
-var finalArray= arrayOfWord(1000);
-for(let i=0; i<finalArray.length; i++){
+let allString	=	"";
+const finalArray	= arrayOfWord(1000);
+for	(let i	=	0; i	<	finalArray.length; i +=	1)	{
 	allString += finalArray[i];
 }
-//console.log(finalArray);
+//	console.log(finalArray);
 console.log(allString.length);

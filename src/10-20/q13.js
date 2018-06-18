@@ -1,4 +1,7 @@
-var strNumber = `37107287533902102798797998220837590246510135740250
+
+function firstNDigitNumber(n)	{
+
+	const strNumber = `37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -100,13 +103,16 @@ var strNumber = `37107287533902102798797998220837590246510135740250
 53503534226472524250874054075591789781264330331690`;
 
 
-const arrayNumber =strNumber.split('\n').map(str => parseInt(str)).filter(num => num != undefined);
-var sum =0;
-//console.log(arrayNumber);
-for(let i=0; i <arrayNumber.length;i++){
-	sum += arrayNumber[i];
+	const arrayNumber =	strNumber.split("\n").map(str => parseInt(str,	10)).filter(num => num !== undefined);
+	let sum =	0;
+	//	console.log(arrayNumber);
+	for	(let i	=	0; i <	arrayNumber.length;	i +=	1)	{
+		sum += arrayNumber[i];
+	}
+	const StringSum = `${sum}`;
+	const StringWthoutDot	= StringSum.replace(".",	"");
+	//	console.log(StringWthoutDot);
+	return	StringWthoutDot.substring(0,	n);
 }
-StringSum = '' + sum;
-StringWthoutDot= StringSum.replace(".","");
-console.log(StringWthoutDot);
-console.log('first 10 digit number is',StringWthoutDot.substring(0,10));
+
+console.log("result is", firstNDigitNumber(10));

@@ -1,48 +1,38 @@
 
-var arrayResult=[1],overflow=0,digit,count,sum=0;
+function nToThePower(b,	n)	{
+	const arrayResult	=	[1];
+	let overflow	=	0;
+	let digit;
+	let count;
+	let sum	=	0;
 
-//ginerating array
-for(let i=0; i<1000;i++){
-	count=arrayResult.length+1;
-	for(let j=0; j< count; j++){
+	//	ginerating array
 
-		digit = arrayResult[j] || 0;
-		digit = 2 * digit + overflow;
+	for	(let i	=	0; i	<	n;	i	+=	1)	{
+		count	=	arrayResult.length +	1;
+		for	(let j	=	0; j	< count; j	+=	1)	{
+			digit = arrayResult[j] || 0;
+			digit = (b * digit) + overflow;
 
-		if(digit > 9){
-			digit -= 10;
-			overflow = 1;
-		}else{
-			overflow =0;
+			if	(digit > 9)	{
+				digit -= 10;
+				overflow = 1;
+			}	else	{
+				overflow =	0;
+			}
+			arrayResult[j]	= digit;
+		//	console.log(arrayResult);
 		}
-		arrayResult[j]= digit;
-	//	console.log(arrayResult);
 	}
+	let strResult	=	"";
+	for	(let i	=	0; i	< arrayResult.length; i +=	1)	{
+		strResult += arrayResult[i];
+	}
+	console.log(strResult);
+	for	(let i	=	0; i	<	arrayResult.length; i +=	1)	{
+		sum += arrayResult[i];
+	}
+	return sum;
 }
-var strResult="";
-for(let i=0; i< arrayResult.length; i++){
-	strResult = strResult+arrayResult[i];
-}
-console.log(strResult);
-//console.log(arrayResult);
-for(let i=0; i<arrayResult.length; i++){
-	sum += arrayResult[i];
-}
-console.log('result is ',sum);
+console.log("result is ",	nToThePower(2, 1000));
 
-
-
-
-
-
-//simple method if digit is small.....................
-// var powerNum=Math.pow(2,1000);
-// console.log(powerNum);
-// var strNum=("" + powerNum).replace(".","");
-// var array = strNum.split("");
-// console.log(array);
-
-// var result = array.reduce((total,next) => {
-// 	return total+next;
-// },0);
-// console.log(result);

@@ -1,5 +1,5 @@
 
-var givenTriangle= `75
+const givenTriangle = `75
 95 64
 17 47 82
 18 35 87 10
@@ -13,30 +13,32 @@ var givenTriangle= `75
 70 11 33 28 77 73 17 78 39 68 17 57
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
-04 62 98 27 23 09 70 98 73 93 38 53 60 04 23`,valueStore=[],countIndex=0;
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23`;
+const valueStore	=	[];
+let countIndex	=	0;
 
-var arrayTriangle = givenTriangle.split('\n');
-var finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(c => parseInt(c)));
+const arrayTriangle = givenTriangle.split("\n");
+const finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(char => parseInt(char,	10)));
 
-//console.log(finalArrayTriangle);
+
+function forwadMax(arr,	index)	{
+	if	(finalArrayTriangle[arr][index] > finalArrayTriangle[arr][index	+	1])	{
+		return index;
+	}
+	return index	+	1;
+}
+
+//	console.log(finalArrayTriangle);
 valueStore.push(finalArrayTriangle[0][0]);
-var result=finalArrayTriangle[0][0],currentIndex=0;
-for(let x=0; x<finalArrayTriangle.length-1; x++){
-	countIndex=forwadMax(x+1,countIndex);
+for	(let x	=	0; x	<	finalArrayTriangle.length	-	1; x	+=	1)	{
+	countIndex	=	forwadMax(x	+	1,	countIndex);
 	valueStore.push(finalArrayTriangle[x+1][countIndex]);
 }
 
-function forwadMax(arr,index){
-	if(finalArrayTriangle[arr][index] > finalArrayTriangle[arr][index+1]){
-		return index;
-	}else{
-		return index+1;
-	}
-}
 
-var sum=0;
-for(let i=0; i<valueStore.length; i++){
+let sum	=	0;
+for	(let i	=	0; i	<	valueStore.length; i	+=	1)	{
 	sum += valueStore[i];
 }
-console.log("max value sum is ",sum);
+console.log("max value sum is ",	sum);
 

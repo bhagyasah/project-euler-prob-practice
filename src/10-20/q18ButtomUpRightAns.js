@@ -1,31 +1,37 @@
-var givenTriangle= `75
-95 64
-17 47 82
-18 35 87 10
-20 04 82 47 65
-19 01 23 75 03 34
-88 02 77 73 07 63 67
-99 65 04 28 06 16 70 92
-41 41 26 56 83 40 80 70 33
-41 48 72 33 47 32 37 16 94 29
-53 71 44 65 25 43 91 52 97 51 14
-70 11 33 28 77 73 17 78 39 68 17 57
-91 71 52 38 17 14 91 43 58 50 27 29 48
-63 66 04 68 89 53 67 30 73 16 69 87 40 31
-04 62 98 27 23 09 70 98 73 93 38 53 60 04 23`,valueStore=[],countIndex=0,resultArray=[];
 
-var arrayTriangle = givenTriangle.split('\n');
-var finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(c => parseInt(c)));
-//console.log(finalArrayTriangle);
-resultArray=finalArrayTriangle[finalArrayTriangle.length-1];
-console.log(resultArray);
-for(let x=finalArrayTriangle.length-2; x >=0; x--){
-	resultArray=finalArrayTriangle[x].map((data,idx) => data+findMax(idx));
-	console.log(resultArray);
 
+function findMax(resultArray,	idx)	{
+	return Math.max(resultArray[idx],	resultArray[idx	+	1]);
 }
 
-function findMax(idx){
-	return Math.max(resultArray[idx],resultArray[idx+1]);
+function maxPathSum() {
+	const givenTriangle	= `75
+	95 64
+	17 47 82
+	18 35 87 10
+	20 04 82 47 65
+	19 01 23 75 03 34
+	88 02 77 73 07 63 67
+	99 65 04 28 06 16 70 92
+	41 41 26 56 83 40 80 70 33
+	41 48 72 33 47 32 37 16 94 29
+	53 71 44 65 25 43 91 52 97 51 14
+	70 11 33 28 77 73 17 78 39 68 17 57
+	91 71 52 38 17 14 91 43 58 50 27 29 48
+	63 66 04 68 89 53 67 30 73 16 69 87 40 31
+	04 62 98 27 23 09 70 98 73 93 38 53 60 04 23`;
+	let resultArray	=	[];
+
+	const arrayTriangle = givenTriangle.split("\n");
+	const finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(char => parseInt(char,	10)));
+
+	resultArray	=	finalArrayTriangle[finalArrayTriangle.length	-	1];
+	//	console.log(resultArray);
+	for	(let x	=	finalArrayTriangle.length	-	2; x >=	0; x	-=	1)	{
+		resultArray	=	finalArrayTriangle[x].map((data,idx) => data	+	findMax(resultArray,	idx));
+	//	console.log(resultArray);
+	}
+	return resultArray;
 }
-console.log('result is ',resultArray[0]);
+const resultarray = maxPathSum();
+console.log("result is ",	resultarray[0]);

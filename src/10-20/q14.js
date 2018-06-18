@@ -13,7 +13,7 @@ function coltazCount(num)	{
 	return count;
 }
 
-function longestColtazSequenceUnderGivenNumber(n)	{
+function longestColtazSequence(n)	{
 	let result;
 	let maxCount	=	0;
 	let count	=	1;
@@ -28,5 +28,5 @@ function longestColtazSequenceUnderGivenNumber(n)	{
 	return result;
 }
 
-console.log("result is ",	longestColtazSequenceUnderGivenNumber(1000000));
+console.log("result is ",	longestColtazSequence(1000000));
 

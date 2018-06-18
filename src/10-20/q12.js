@@ -17,7 +17,7 @@ function heighlyDivisibleNumSum(n) {
 		//	console.log("number of divisor",count);
 		if (count >= n) {
 			break;
-		}	else {
+		} else {
 			count	=	0;
 		}
 	}

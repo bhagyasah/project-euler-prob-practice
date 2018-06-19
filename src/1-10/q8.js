@@ -21,23 +21,23 @@ function largeConsecutiveMult(n)	{
 	05886116467109405077541002256983155200055935729725
 	71636269561882670428252483600823257530420752963450`;
 
-	const givenArray = data.split("").filter(c => c >= "0" && c <=	"9").map(c => parseInt(c, 10));
-	let temp	=	1;
-	const tempArray	=	[];
-	for	(let j	=	0; j <= givenArray.length;	j	+=	1)	{
-		for	(let k	=	j; k < j	+	n; k	+=	1)	{
-			temp *= givenArray[k];
-		}
-		tempArray.push(temp);
-		temp	=	1;
-	}
-	let ftemp	=	tempArray[0];
-	for	(let i	=	0; i	<	tempArray.length; i +=	1)	{
-		if	(ftemp < tempArray[i])	{
-			ftemp = tempArray[i];
-		}
-	}
-	return ftemp;
+  const givenArray = data.split("").filter(c => c >= "0" && c <=	"9").map(c => parseInt(c, 10));
+  let temp	=	1;
+  const tempArray	=	[];
+  for	(let j	=	0; j <= givenArray.length;	j	+=	1) {
+    for	(let k	=	j; k < j + n; k	+= 1) {
+      temp *= givenArray[k];
+    }
+    tempArray.push(temp);
+    temp	=	1;
+  }
+  let ftemp	=	tempArray[0];
+  for	(let i	=	0; i < tempArray.length; i +=	1) {
+    if	(ftemp < tempArray[i])	{
+      ftemp = tempArray[i];
+    }
+  }
+  return ftemp;
 }
 
 console.log("larget value is",	largeConsecutiveMult(13));

@@ -1,11 +1,11 @@
 
 
 function findMax(resultArray,	idx)	{
-	return Math.max(resultArray[idx],	resultArray[idx	+	1]);
+  return Math.max(resultArray[idx],	resultArray[idx	+	1]);
 }
 
 function maxPathSum() {
-	const givenTriangle	= `75
+  const givenTriangle	= `75
 	95 64
 	17 47 82
 	18 35 87 10
@@ -20,18 +20,18 @@ function maxPathSum() {
 	91 71 52 38 17 14 91 43 58 50 27 29 48
 	63 66 04 68 89 53 67 30 73 16 69 87 40 31
 	04 62 98 27 23 09 70 98 73 93 38 53 60 04 23`;
-	let resultArray	=	[];
+  let resultArray	=	[];
 
-	const arrayTriangle = givenTriangle.split("\n");
-	const finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(char => parseInt(char,	10)));
+  const arrayTriangle = givenTriangle.split("\n");
+  const finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(char => parseInt(char,	10)));
 
-	resultArray	=	finalArrayTriangle[finalArrayTriangle.length	-	1];
-	//	console.log(resultArray);
-	for	(let x	=	finalArrayTriangle.length	-	2; x >=	0; x	-=	1)	{
-		resultArray	=	finalArrayTriangle[x].map((data,idx) => data	+	findMax(resultArray,	idx));
-	//	console.log(resultArray);
-	}
-	return resultArray;
+  resultArray	=	finalArrayTriangle[finalArrayTriangle.length	-	1];
+  //	console.log(resultArray);
+  for	(let x	=	finalArrayTriangle.length	-	2; x >=	0; x	-=	1)	{
+    resultArray	=	finalArrayTriangle[x].map((data,idx) => data	+	findMax(resultArray,	idx));
+  //	console.log(resultArray);
+  }
+  return resultArray;
 }
 const resultarray = maxPathSum();
 console.log("result is ",	resultarray[0]);

@@ -22,23 +22,22 @@ const finalArrayTriangle = arrayTriangle.map(c => c.split(" ")).map(c => c.map(c
 
 
 function forwadMax(arr,	index)	{
-	if	(finalArrayTriangle[arr][index] > finalArrayTriangle[arr][index	+	1])	{
-		return index;
-	}
-	return index	+	1;
+  if	(finalArrayTriangle[arr][index] > finalArrayTriangle[arr][index	+	1])	{
+    return index;
+  }
+  return index	+	1;
 }
 
 //	console.log(finalArrayTriangle);
 valueStore.push(finalArrayTriangle[0][0]);
 for	(let x	=	0; x	<	finalArrayTriangle.length	-	1; x	+=	1)	{
-	countIndex	=	forwadMax(x	+	1,	countIndex);
-	valueStore.push(finalArrayTriangle[x+1][countIndex]);
+  countIndex	=	forwadMax(x	+	1,	countIndex);
+  valueStore.push(finalArrayTriangle[x+1][countIndex]);
 }
-
 
 let sum	=	0;
 for	(let i	=	0; i	<	valueStore.length; i	+=	1)	{
-	sum += valueStore[i];
+  sum += valueStore[i];
 }
 console.log("max value sum is ",	sum);
 

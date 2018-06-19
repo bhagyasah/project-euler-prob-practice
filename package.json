@@ -8,7 +8,9 @@
   },
   "author": "Bhagya Sah",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",

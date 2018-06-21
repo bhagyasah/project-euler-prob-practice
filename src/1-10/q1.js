@@ -10,5 +10,5 @@ function sumOfMult3And5(n) {
   }
   return sum;
 }
-console.log("sum", sumOfMult3And5(1000));
+console.log('sum', sumOfMult3And5(1000));
 

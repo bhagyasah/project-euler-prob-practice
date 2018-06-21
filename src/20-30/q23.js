@@ -17,13 +17,13 @@ function abundantArray() {
     }
     divSum = 0;
   }
-  // console.log("total sum ", totalSum);
+  // console.log('total sum ', totalSum);
   return abundArray;
 }
 
 function abundantSum() {
   const finalAbundantArray = abundantArray();
-  // console.log("total sum is", totalSum);
+  // console.log('total sum is', totalSum);
   for (let i = 1; i < finalAbundantArray.length; i += 1) {
     for (let j = 1; j <= i; j += 1) {
       if (finalAbundantArray[j] && finalAbundantArray[i - j]) {
@@ -35,5 +35,5 @@ function abundantSum() {
 }
 
 abundantSum();
-console.log("non abundand sum is", totalSum);
+console.log('non abundand sum is', totalSum);
 

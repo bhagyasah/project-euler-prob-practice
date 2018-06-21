@@ -9,6 +9,7 @@
   "author": "Bhagya Sah",
   "license": "ISC",
   "dependencies": {
+    "array-permutation": "^0.2.0",
     "fs": "0.0.1-security"
   },
   "devDependencies": {

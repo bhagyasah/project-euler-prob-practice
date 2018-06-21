@@ -1,6 +1,6 @@
 
 function sumDivisor(n) {
-  // console.log("value to be checked", n);
+  // console.log('value to be checked', n);
   let sum = 0;
   for (let i = 1; i < n; i += 1) {
     if (n % i === 0) {
@@ -19,11 +19,11 @@ function amicableNumber() {
     sum = sumDivisor(i);
     result = sumDivisor(sum);
     if (i === result && sum !== result) {
-      console.log("emicable series", result, sum);
+      console.log('emicable series', result, sum);
       finalResult += result + sum;
       i = sum;
     }
   }
   return finalResult;
 }
-console.log("result is ", amicableNumber());
+console.log('result is ', amicableNumber());

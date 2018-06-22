@@ -1,58 +1,42 @@
-// // lexicographic ordering  algorithm.....
-// /**
-// 1.find the largest x such that P[x]<P[x+1]
-//   (if there is no such x, p is the last permutaion.)
-// 2.find the largest y such that P[x] <P[y].
-// 3. Swap  p[x] and P[y]
-// 4. Reverse p[x+1....n]
-// */
 
-let vals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-function swap(a, i, j) {
-  const tempArray = a;
-  const temp = a[i];
-  tempArray[i] = a[j];
-  tempArray[j] = temp;
+
+function arrayAddition(a, b) {
+  let overflow = 0;
+  let digitA;
+  let digitB;
+  let digit;
+  const tempArray = [0];
+  let count = Math.max(a.length, b.length);
+
+  for (let i = 0; i < count; i += 1) {
+    digitA = a[i] || 0;
+    digitB = b[i] || 0;
+    digit = digitA + digitB + overflow;
+    if (digit > 9) {
+      digit -= 10;
+      overflow = 1;
+    } else {
+      overflow = 0;
+    }
+    tempArray[i] = digit;
+    if (overflow === 1 && ((i + 1) === count)) {
+      count += 1;
+    }
+  }
   return tempArray;
 }
 
-function permutaionSet(n) {
-  // step-1...
-  let count = 1;
-  while (count !== n) {
-    let largestI = -1;
-    // console.log(vals);
-    for (let i = 0; i < vals.length - 1; i += 1) {
-      if (vals[i] < vals[i + 1]) {
-        largestI = i;
-      }
-    }
-    // console.log('largestI', largestI);
-    if (largestI === -1) {
-      console.log('finished');
-      break;
-    }
-    let largestJ = -1;
-    // step -2...
-    for (let j = 0; j < vals.length; j += 1) {
-      if (vals[largestI] < vals[j]) {
-        largestJ = j;
-      }
-    }
-    // console.log('largesJ', largestJ);
-    // step 3..........
-    vals = swap(vals, largestI, largestJ);
+// console.log('result is ', arrayAddition([1, 8, 8], [5, 5]));
 
-    // step: 4 reverse from largestI +1 to the end
-
-    const endArray = vals.splice(largestI + 1);
-    endArray.reverse();
-    vals = vals.concat(endArray);
-    // console.log(vals);
-    count += 1;
+function fibonaciArray() {
+  const fibArray = [[1], [1]];
+  let digit = 1;
+  for (let i = 2; digit <= 1000; i += 1) {
+    fibArray.push(arrayAddition(fibArray[i - 1], fibArray[i - 2]));
+    digit = fibArray[i].length;
+    digit += 1;
   }
-  return vals;
+  return fibArray;
 }
-permutaionSet(2000000);
-console.log(vals);
 
+console.log(fibonaciArray().length);

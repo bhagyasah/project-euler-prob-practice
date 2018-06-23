@@ -7,7 +7,7 @@ function dayOfWeek(y, m, q) {
   return d;
 }
 
- function totalSunday() {
+function totalSunday() {
   let count = 0;
   let month = [13, 14, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   for (let y = 1901; y <= 2000; y += 1) {

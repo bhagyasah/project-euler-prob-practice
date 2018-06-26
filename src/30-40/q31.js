@@ -16,11 +16,11 @@ function createTable(c, t) {
 }
 
 function main(target) {
-  let coins = [1, 2, 5, 10, 20, 50, 100, 200];
+  const coins = [1, 2, 5, 10, 20, 50, 100, 200];
   createTable(coins.length, target);
   for (let i = 1; i < resultArray.length; i += 1) {
     for (let j = 1; j <= target; j += 1) {
-      //console.log(coins[i]);
+      // console.log(coins[i]);
       if (coins[i] > j) {
         resultArray[i][j] = resultArray[i - 1][j];
       } else {

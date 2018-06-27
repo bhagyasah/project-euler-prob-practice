@@ -1,4 +1,4 @@
-const primeNumberList = require('./../test/PrintPrime.js');
+const primeNumberList = require('./../common/PrintPrime.js');
 
 const primeNumbers = primeNumberList(1000000);
 const finalPrimeList = [];

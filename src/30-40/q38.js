@@ -1,12 +1,4 @@
-function isPanDigit(str) {
-  const tempArray = str.split('').map(c => parseInt(c, 10));
-  for (let i = 1; i <= 9; i += 1) {
-    if (!tempArray.includes(i)) {
-      return false;
-    }
-  }
-  return true;
-}
+const isPanDigit = require('./../common/checkPandigital');
 // console.log(isPanDigit(`123956879`));
 
 function multiplication() {
@@ -21,7 +13,7 @@ function multiplication() {
       temp += `${result}`;
     }
     tempInt = parseInt(temp, 10);
-    if (temp.length === 9 && isPanDigit(temp)) {
+    if (temp.length === 9 && isPanDigit(temp, 9)) {
       if (tempInt > max) {
         max = tempInt;
       }

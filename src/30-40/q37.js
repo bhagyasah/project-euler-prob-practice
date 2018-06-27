@@ -1,4 +1,4 @@
-const isPrime = require('./../test/CheckPrime.js');
+const isPrime = require('./../common/checkPrime.js');
 
 // console.log(isPrime(3197));
 

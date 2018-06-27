@@ -1,4 +1,4 @@
-const x = 102;
+
 module.exports = function isPrime(x) {
   if (x === 1) {
     return false;

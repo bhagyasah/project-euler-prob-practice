@@ -26,4 +26,3 @@ function main() {
   return pentagonalNums;
 }
 console.log('result is', main());
-

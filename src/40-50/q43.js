@@ -14,13 +14,6 @@ function subStringDivisiblity(num) {
   return true;
 }
 
-const result=1406357289+
-1430952867+
-1460357289+
-4106357289+
-4130952867+
-4160357289;
-console.log(result);
 function checkSum(n) {
   return `${n}`.split('').map(c => parseInt(c, 10)).reduce((t, next) => t + next);
 }

@@ -41,5 +41,3 @@ function main() {
 
 console.log('result is ', main());
 
-
-

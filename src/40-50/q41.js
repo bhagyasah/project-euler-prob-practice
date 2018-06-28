@@ -9,7 +9,7 @@ function main() {
   let maxPandigit = 0;
   for (let i = 1234567; i <= 7654321; i += 2) {
     if (checkSum(i) === 28) {
-      if (checkPrime(i) && checkPandigit(`${i}`)) {
+      if (checkPrime(i) && checkPandigit(`${i}`, 1, `${i}`.length)) {
         if (i > maxPandigit) {
           maxPandigit = i;
         }

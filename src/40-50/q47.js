@@ -1,6 +1,6 @@
 const primeList = require('./../common/PrintPrime');
 
-const primeNums = primeList(10000000);
+const primeNums = primeList(1000000000);
 
 function main() {
   let tempArray = [];

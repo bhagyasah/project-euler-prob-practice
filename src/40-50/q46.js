@@ -5,7 +5,7 @@ const primeNums = primeList(10000);
 // console.log(primeNums);
 
 function checkConjecture(n) {
-  if (n % 2 === 0 || primeNums.includes(n)) {
+  if (primeNums.includes(n)) {
     return true;
   }
   for (let i = 1; (i ** 2) * 2 <= n; i += 1) {

@@ -39,7 +39,7 @@ exports.power = (b,	n) => {
   for	(let i	=	0; i	<	arrayResult.length; i +=	1)	{
     sum += arrayResult[i];
   }
-  return strResult;
+  return arrayResult;
 };
 
 // const p = require('./q16.js');

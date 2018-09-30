@@ -1,12 +1,12 @@
 
 const oneDigit	= (n) =>	{
-  const oneDigitArray =	["",	"one", "two", "three", "four", "five", "six",	"seven", "eight", "nine",	"ten",
-    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+  const oneDigitArray =	['',	'one', 'two', 'three', 'four', 'five', 'six',	'seven', 'eight', 'nine',	'ten',
+    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
   return oneDigitArray[n];
 };
 
 const twoDigit	= (n) => {
-  const twoDigitArray = ["",	"",	"twenty",	"thirty",	"forty", "fifty",	"sixty", "seventy",	"eighty", "ninety"];
+  const twoDigitArray = ['',	'',	'twenty',	'thirty',	'forty', 'fifty',	'sixty', 'seventy',	'eighty', 'ninety'];
   return twoDigitArray[n];
 };
 
@@ -25,7 +25,7 @@ function numWord(i)	{
     if	(ones !==	0)	{
       onesWord	= oneDigit(ones);
     }	else	{
-      onesWord	=	"";
+      onesWord	=	'';
     }
     tens	= Math.floor(i / 10);
     if	(i % 10 !==	0)	{
@@ -54,27 +54,27 @@ const arrayOfWord = (n) => {
       hundred	= Math.floor(i / 100);
       if	(i % 100 === 0)	{
         hundredWord	= oneDigit(hundred);
-        hundredWord += "hundred";
+        hundredWord += 'hundred';
         console.log(hundredWord);
         wordArray.push(hundredWord);
       }	else	{
         hundredWord	= oneDigit(hundred);
-        hundredWord += "hundredand";
-        remainder = i %100;
+        hundredWord += 'hundredand';
+        remainder = i % 100;
         tensWord	= numWord(remainder);
         console.log(`${hundredWord}${tensWord}`);
         wordArray.push(`${hundredWord}${tensWord}`);
       }
     }
     if	(i ===	1000)	{
-      console.log("onethousand");
-      wordArray.push("onethousand");
+      console.log('onethousand');
+      wordArray.push('onethousand');
     }
   }
   return wordArray;
 };
 
-let allString	=	"";
+let allString	=	'';
 const finalArray	= arrayOfWord(1000);
 for	(let i	=	0; i	<	finalArray.length; i +=	1)	{
   allString += finalArray[i];
